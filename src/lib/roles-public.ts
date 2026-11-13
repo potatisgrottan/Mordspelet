@@ -59,12 +59,17 @@ export const PUBLIC_ROLES = [
 ] as const;
 
 export type RoleSlug = (typeof PUBLIC_ROLES)[number]["slug"];
-export type PublicRole = (typeof PUBLIC_ROLES)[number];
+export type PublicRole = Omit<
+  (typeof PUBLIC_ROLES)[number],
+    "portrait"
+    > & { portrait: string | null };
 
 export function isRoleSlug(value: string): value is RoleSlug {
   return PUBLIC_ROLES.some((role) => role.slug === value);
 }
 
-export function findPublicRole(slug: string) {
+
+export function findPublicRole(slug: string): PublicRole | undefined {
   return PUBLIC_ROLES.find((role) => role.slug === slug);
-}
+  }
+  

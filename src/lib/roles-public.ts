@@ -47,14 +47,14 @@ export const PUBLIC_ROLES = [
     "name": "Konstapel Sigge Skäggstubb",
     "title": "Ordningsman / batongkonnässör",
     "num": "07",
-    "portrait": null
+    "portrait": "/portraits/sigge.webp"
   },
   {
     "slug": "professor-otto-omlopp",
     "name": "Professor Otto Omlopp",
     "title": "Astronom / expert på ur som går fel",
     "num": "08",
-    "portrait": null
+    "portrait": "/portraits/otto.webp"
   }
 ] as const;
 
